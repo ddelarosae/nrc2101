@@ -13,13 +13,11 @@
 <body>
     <section>
         {% for message in get_flashed_messages() %}
-        <div>
-            {{message}}
-        </div>
+        <div class="flash">{{message}}</div>
         {% endfor %}
     </section>
     <h1>Registro para vacunación COVID-19</h1>
-    <form action="{{url_for('index')}}" method="get" name="formRegistro" onSubmit="validar_formulario()">
+    <form action="{{url_for('sesion')}}" method="post" name="formRegistro" onSubmit="validar_formulario()">
         <p>Nombre: <input type="text" name="nombre" id="nombre"></p>
         <p>Usuario: <input type="text" name="usuario" id="usuario"></p>
         <p>Sexo: 
