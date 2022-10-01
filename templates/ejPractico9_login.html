@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Inicio de sesion</h1>
-    <form name="login" method="get" action="">
+    <form name="login" method="post" action="{{url_for('login')}}" >
         <div>
             <label for="username">Usuario</label>
             <input name="username" id="username" type="text">

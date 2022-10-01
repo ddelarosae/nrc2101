@@ -7,9 +7,13 @@ app.secret_key = os.urandom(24)
 @app.route('/')
 def index():
     return render_template('sesion.html')
-@app.route('/login')
+@app.route('/login',methods=('GET','POST'))
 def login():
-    return render_template('ejPractico9_login.html')
+        try:
+            if request.method == 'POST':
+                return render_template('exitoso.html')
+        except:
+            return render_template('error.html') 
 @app.route('/sesion',methods=('GET','POST'))
 def sesion():
     try:
