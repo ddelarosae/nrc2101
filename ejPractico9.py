@@ -7,6 +7,9 @@ app.secret_key = os.urandom(24)
 @app.route('/')
 def index():
     return render_template('sesion.html')
+@app.route('/error')
+def error():
+    return render_template('error.html')
 @app.route('/login',methods=('GET','POST'))
 def login():
         try:
