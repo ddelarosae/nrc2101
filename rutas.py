@@ -6,13 +6,8 @@ app.secret_key = os.urandom(24)
 @app.route('/')
 @app.route('/index')
 def index():
-    usuario = {'usuario':'...'}
-    comentarios = [
-        {'autor':{'usuario':'...'}, 'comentario':'...'},
-        {'autor':{'usuario':'...'}, 'comentario':'...'}
-    ]
-    return render_template('index.html', titulo='Inicio', usuario=usuario, comentarios=comentarios)
-@app.route('/login',methods=('GET','POST'))
+    return render_template('index.html', titulo='Inicio')
+@app.route('/login',methods=['GET','POST'])
 def login():
     form = FormInicio()
     if(form.validate_on_submit()):

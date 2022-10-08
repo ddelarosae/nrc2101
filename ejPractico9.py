@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash,jsonify
 import utils
 import yagmail
 import os
+from mensaje import mensajes
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 @app.route('/')
@@ -14,7 +15,8 @@ def error():
 def login():
         try:
             if request.method == 'POST':
-                return render_template('exitoso.html')
+                #return render_template('exitoso.html')
+                return jsonify(mensajes)
         except:
             return render_template('error.html') 
 @app.route('/sesion',methods=('GET','POST'))
