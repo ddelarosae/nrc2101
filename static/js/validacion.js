@@ -16,11 +16,11 @@ function validar_formulario(){
 
 }
 function ocultarPassword() {
-    var elemento=document.getElementById("pass");
+    var elemento=document.getElementById("password");
     elemento.type="password";
 }
 function mostrarPassword() {
-    var elemento=document.getElementById("pass");
+    var elemento=document.getElementById("password");
     elemento.type="text";
 }
 function showForm() {
